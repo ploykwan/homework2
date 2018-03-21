@@ -26,6 +26,20 @@ public class Recursion {
 		return list;
 	}
 
+	public static long fibonacci(int n) {
+		return helper(n,0,1);
+	}
+	
+	public static long helper(int n,long num1, long num2) {
+		if( n == 0 ) {
+			return 0;
+		}
+		if( n == 1 ) {
+			return num2;
+		}
+		return helper(n-1,num2,num1+num2);
+	}
+
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("a");
@@ -38,6 +52,8 @@ public class Recursion {
 		list.add("c");
 		System.out.println(list);
 		System.out.println(unique(list));
+		
+		System.out.println(fibonacci(10));
 
 	}
 }
