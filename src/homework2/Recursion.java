@@ -2,7 +2,11 @@ package homework2;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Homework2 for OOP2 class.
+ * @author kwankaew
+ *
+ */
 public class Recursion {
 	/**
 	 * Remove duplicate consecutive items from a list, changing the list parameter.
@@ -25,11 +29,23 @@ public class Recursion {
 			unique(line);
 		return list;
 	}
-
+	
+	/**
+	 * 
+	 * @param n is the number that have to calculate.
+	 * @return the fibonacci number of n.
+	 */
 	public static long fibonacci(int n) {
 		return helper(n,0,1);
 	}
 	
+	/**
+	 * Helper method for fibonacci method.
+	 * @param n is the number that have to calculate.
+	 * @param num1 the first number in fibonacci sequence.
+	 * @param num2 the secound number in fibonacci sequence.
+	 * @return the fibonacci number.
+	 */
 	public static long helper(int n,long num1, long num2) {
 		if( n == 0 ) {
 			return 0;
@@ -40,6 +56,10 @@ public class Recursion {
 		return helper(n-1,num2,num1+num2);
 	}
 
+	/**
+	 * Main
+	 * 
+	 */
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();
 		list.add("a");
@@ -53,7 +73,7 @@ public class Recursion {
 		System.out.println(list);
 		System.out.println(unique(list));
 		
-		System.out.println(fibonacci(10));
+		System.out.println(fibonacci(90));
 
 	}
 }
